@@ -1,3 +1,5 @@
 module.exports = {
-  'Date': 'Fri, 26 Aug 2022 08:06:02 GMT'
+  'Access-Control-Allow-Origin': '*',
+  'Content-Type': 'application/json',
+  'Date': 'Fri, 23 Aug 2019 08:06:02 GMT'
 };
