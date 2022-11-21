@@ -1,0 +1,19 @@
+{
+  "name": "whopper-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "find-free-port": "^2.0.0",
+    "mocky": "^0.1.11",
+    "nodemon": "^2.0.20"
+  }
+}
