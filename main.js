@@ -2,7 +2,7 @@ const mocky = require('mocky');
 
 const handler = require('./lib/handler');
 const logger = require('./lib/logger');
-const findAvailablePort = require('./lib/find-aveilable-port');
+const findAvailablePort = require('./lib/find-available-port');
 
 const httpMethods = ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'];
 
