@@ -62,3 +62,19 @@ ___
 リクエストに対するJSONファイルがない場合、HTTPメソッド毎にデフォルトのレスポンスを指定することができます。
 
 `config/default-response.js`で定義することができます。
+
+___
+#### レスポンス一覧を出力
+
+以下コマンドで、定義されているレスポンス一覧を`response.txt`に出力します
+~~~
+npm run list
+~~~
+
+~~~
+users/1/GET.json
+users/2/GET.json
+users/3/GET.json
+users/GET.json
+users/POST.json
+~~~
