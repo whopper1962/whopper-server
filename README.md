@@ -52,9 +52,35 @@ curl localhost:3000/users
 [{"id":1,"name":"Brendan Eich"},{"id":2,"name":"Ryan Dahl"}]
 ~~~
 ___
-#### ヘッダー
+#### リクエスト別のレスポンスヘッダーの定義
 
-`config/response-headers.js`でレスポンスヘッダーを定義することができます。
+1. `headers`ディレクトリ配下にURLパスと同様のディレクトリを作成（例:  `/users`:GET）
+~~~
+headers
+  |
+  |-users
+~~~
+
+2. `{HTTPメソッド}.json`を作成
+- リクエストに対応するヘッダー定義ファイルがある場合、それらがヘッダーとして設定されます
+- 対応するファイルが無い場合、またはフォーマットが不正の場合は、`config/default-headers.js`がヘッダーとして設定されます
+~~~
+headers
+  |
+  |-users
+      |
+      |-GET.json
+~~~
+
+`GET.json`
+~~~json:GET.json
+{
+  "Access-Control-Allow-Origin": "*",
+  "Content-Type": "application/json",
+  "Date": "Fri, 23 Aug 2019 08:06:02 GMT",
+  "Date2": "Fri, 23 Aug 2019 08:06:02 GMT"
+}
+~~~
 
 ___
 #### デフォルトレスポンス
