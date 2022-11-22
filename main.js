@@ -6,7 +6,7 @@ const findAvailablePort = require('./lib/find-aveilable-port');
 
 const httpMethods = ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'];
 
-async function main () {
+(async function main () {
   const listeningPort = await findAvailablePort();
   logger.startServer(listeningPort);
   const routes = httpMethods.map((method) => {
@@ -17,6 +17,4 @@ async function main () {
     };
   });
   mocky.createServer(routes).listen(listeningPort);
-}
-
-main();
+})();
