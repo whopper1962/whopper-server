@@ -1,19 +1,19 @@
-const mocky = require('mocky');
+const mocky = require("mocky");
 
-const handler = require('./lib/handler');
-const logger = require('./lib/logger');
-const findAvailablePort = require('./lib/find-available-port');
+const handler = require("./lib/handler");
+const logger = require("./lib/logger");
+const findAvailablePort = require("./lib/find-available-port");
 
-const httpMethods = ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'];
+const httpMethods = ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"];
 
-(async function main () {
+(async function main() {
   const listeningPort = await findAvailablePort();
   logger.startServer(listeningPort);
   const routes = httpMethods.map((method) => {
     return {
-      url: new RegExp('/*'),
+      url: new RegExp("/*"),
       method: method,
-      res: handler
+      res: handler,
     };
   });
   mocky.createServer(routes).listen(listeningPort);
